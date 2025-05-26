@@ -25,7 +25,7 @@
 
 
 
-## ✅ Features Implemented
+**## ✅ Features Implemented**
 
 ###  Dashboard Homepage (`/`)
 - Displays 20 employees fetched from `https://dummyjson.com/users?limit=20`.
@@ -65,7 +65,7 @@
 
 
 
-### ScreenShots
+**### ScreenShots ###**
 
 DashBoard-Home Pages
 
