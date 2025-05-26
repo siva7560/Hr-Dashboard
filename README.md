@@ -83,7 +83,7 @@ http://localhost:3000
 ![Dashboard Light Mode](assets/Dashboard-Page-Light-Mode.png)  
 
 
-### Dashboard Homepage Light Mode
+### Dashboard Homepage Dark Mode
 
 ![Dashboard Dark Mode](assets/Dashboard-Page-Dark-Mode.png)
 
