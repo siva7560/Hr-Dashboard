@@ -72,8 +72,7 @@ http://localhost:3000
 - **Reusable Components**: Card, Badge, Modal, Button
 - **Responsive Design** from mobile to desktop
 - **Modular Folder Structure**: `components/`, `hooks/`, `lib/`, etc.
-- **Custom Hooks**: `useBookmarks`, `useSearch`
-- **Error/Loading States** handled gracefully
+
 
 ---
 
@@ -84,7 +83,7 @@ http://localhost:3000
 ![Dashboard Dark Mode](assets/Dashboard-Page-Dark-Mode.png)
 
 ### Searching
-![Searching Employees](assets/Searching%20Employees.png)
+![Searching Employees](assets/Searching-Employees.png)
 
 ### Employee Details Page
 ![Employee Details 1](assets/Employee-Details-1.png)  
