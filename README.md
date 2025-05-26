@@ -1,4 +1,4 @@
 # Hr-Dashboard
 
 
-![Alt Text](assets/Analytics 1.png)
+![Alt Text](assets/Analytics-1.png)
