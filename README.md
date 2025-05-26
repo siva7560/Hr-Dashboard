@@ -78,25 +78,53 @@ http://localhost:3000
 
 ## 📸 Screenshots
 
-### Dashboard Homepage
+### Dashboard Homepage Light Mode
+
 ![Dashboard Light Mode](assets/Dashboard-Page-Light-Mode.png)  
+
+
+### Dashboard Homepage Light Mode
+
 ![Dashboard Dark Mode](assets/Dashboard-Page-Dark-Mode.png)
 
-### Searching
+
+
+
+### Searching Employees
+
 ![Searching Employees](assets/Searching-Employees.png)
 
+
+
 ### Employee Details Page
+
 ![Employee Details 1](assets/Employee-Details-1.png)  
+
+
 ![Employee Details 2](assets/Employee-Details-2.png)  
+
+
 ![Employee Details 3](assets/Employee-Details-3.png)  
+
+
 ![Employee Details 4](assets/Employee-Details-4.png)
 
+
+
+
 ### Bookmarked Employees Page
-![Bookmarked Employees](assets/Bookmared-Employees.png)
+
+![Bookmarked Employees](assets/Bookmarked-Employees.png)
+
+
+
 
 ### Analytics Page
+
 ![Analytics 1](assets/Analytics-1.png)  
+
 ![Analytics 2](assets/Analytics-2.png)  
+
 ![Analytics 3](assets/Analytics-3.png)
 
 ---
