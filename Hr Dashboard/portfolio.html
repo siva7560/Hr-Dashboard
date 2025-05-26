@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #0A192F;
+            background-color: #F0F3BD;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background-color: #112240;
+            padding: 1rem 0;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #F7FFF7;
+            font-weight: 600;
+        }
+        .navbar-custom .navbar-nav .nav-link:hover,
+        .navbar-custom .navbar-nav .nav-link.active {
+            color: #EF476F;
+            text-decoration: underline;
+        }
+        .navbar-custom .navbar-toggler {
+            border-color: transparent;
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=UTF8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 150px; /* Adjusted for the sticky navbar */
+            padding-bottom: 100px;
+            background-color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #0A192F;
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            color: #4A4A4A;
+        }
+        .btn-primary {
+            background-color: #02C39A;
+            border-color: #02C39A;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #EF476F;
+            border-color: #EF476F;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #eeffee;
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0A192F;
+        }
+        .about-section p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: #4A4A4A;
+        }
+        .skills-section {
+        padding: 80px 0;
+        background-color: #F0F3BD;
+    }
+
+    .skills-section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #0A192F;
+    }
+
+    .skill-card {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        padding: 2rem 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: scale(1.05);
+    }
+
+    .icon {
+        font-size: 3rem;
+        color: #02C39A;
+        margin-bottom: 1rem;
+    }
+
+    .skill-card h4 {
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        color: #0A192F;
+    }
+
+    .progress-bar {
+        background-color: #E5E5E5;
+        border-radius: 8px;
+        height: 20px;
+        overflow: hidden;
+        margin-top: 0.5rem;
+    }
+
+    .progress-level {
+        background-color: #02C39A;
+        height: 100%;
+        text-align: right;
+        padding-right: 8px;
+        font-size: 0.9rem;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 80px 0;
+            background-color: #eeffee;
+        }
+        .portfolio-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0A192F;
+        }
+        .portfolio-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+        .portfolio-caption {
+            padding: 1rem;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #112240;
+            color: #F7FFF7;
+            text-align: center;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .contact-info a {
+            color: #ADEFD1FF;
+            font-size: 1.5rem;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: #EF476F;
+            text-decoration: underline;
+        }
+        .contact-icons {
+            font-size: 2.5rem;
+            margin-right: 0.5rem;
+        }
+        .contact-icons {
+        gap: 40px; /* Add gap between each contact item */
+    }
+     i{
+        scale: 1.5;
+     }
+    .contact-link {
+        color: #00e0a8;
+        font-size: 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s;
+    }
+
+    .contact-link:hover {
+        color: #EF476F;
+        text-decoration: underline;
+    }
+
+    .contact-link i {
+        font-size: 2.5rem;
+        margin-right: 0.5rem;
+        scale: 0.7;
+    }
+    .card{
+        border: 1px solid rgba(38, 36, 36, 0.572);
+    }
+    .education-section {
+        padding: 80px 0;
+        background-color: #F0F3BD;
+        text-align: center;
+    }
+
+    .education-section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #0A192F;
+    }
+
+    .education-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .education-item {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .education-item h4 {
+        font-size: 1.8rem;
+        color: #0A192F;
+    }
+
+    .education-item p {
+        font-size: 1.2rem;
+        color: #4A4A4A;
+    }
+    
+    .btn-outline-primary {
+        color: #02C39A;
+        border-color: #02C39A;
+        transition: all 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #02C39A;
+        color: #ffffff;
+    }
+    /* .portfolio-item img{
+        height: 270px;
+        width: 350px;
+        background-size: contain;
+    } */
+
+    
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Home Section -->
+   <section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                <h1 style="text-align: left;">Hello, I am siva. </h1>
+                <h1 style="text-align: left;">Welcome to My Portfolio</h1>
+                <p class="lead" style="text-align: left;">
+                    Discover my projects, skills, and journey in web development. Explore what I can do for you.
+                </p>
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            </div>
+            <div class="col-md-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="600">
+                <img  width="300px" height="350px" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cG9ydGZvbGlvfGVufDB8fDB8fHww" alt="Hero Image" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container ">
+            <h2 data-aos="fade-up" data-aos-duration="1200">About Me</h2>
+            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                I'm a passionate web developer with experience in modern web technologies, including HTML, CSS, JavaScript, and popular frameworks React.
+            </p>
+            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="700">
+                I am a Computer Science student with a strong passion for web development,
+                 particularly in the field of front-end design. My journey has been driven by a fascination 
+                 with creating visually compelling and user-friendly digital experiences. I love crafting web 
+                 interfaces that combine creativity with functionality, ensuring that every website not only looks 
+                 good but also provides a seamless experience.
+
+Beyond web development, I enjoy coding challenges that keep my problem-solving skills sharp. My passion for coding extends
+ to learning new programming languages, frameworks, and staying up-to-date with the latest industry trends. I'm enthusiastic
+  about contributing to innovative projects and continuing my journey to grow as a developer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <h2 data-aos="fade-up" data-aos-duration="1200">My Skills</h2>
+        <div class="row">
+            <!-- Skill Card 1 -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fab fa-html5"></i></div>
+                    <h4>HTML5</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 100%;">100%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fab fa-css3-alt"></i></div>
+                    <h4>CSS3</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 95%;">95%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fab fa-js"></i></div>
+                    <h4>JavaScript</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h4>C</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 95%;">95%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card: C++ -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4>C++</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card: Python -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fab fa-python"></i></div>
+                    <h4>Python</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card: React -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fab fa-react"></i></div>
+                    <h4>React</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card: SQL -->
+            <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+                <div class="skill-card">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <h4>SQL</h4>
+                    <div class="progress-bar">
+                        <div class="progress-level" style="width: 80%;">80%</div>
+                    </div>
+                </div>
+            </div>
+
+         
+        </div>
+    </div>
+</section>
+
+   <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 data-aos="fade-up" data-aos-duration="1200">Portfolio</h2>
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <div class="portfolio-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh8ycLuWnU3Ev2AZrPAmO7_LKsuotY-5Edgw&s" alt="Portfolio Item 1">
+                    <div class="portfolio-caption">
+                        <h3>Amazon clone</h3>
+                        <p>A web development project focusing on frontend design.</p>
+                        <a href="https://example-project1.com" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                <div class="portfolio-item">
+                    <img style="height: 233px;" src="https://media.istockphoto.com/id/1352999191/photo/vintage-tic-tac-toe-wooden-board-game-on-wooden-top-table-with-selective-focusing.jpg?s=612x612&w=0&k=20&c=1zFVWF3oOSQnEkPtrlk4mIwaTf4emFqDIr1ywgtOXfc=" alt="Portfolio Item 2">
+                    <div class="portfolio-caption">
+                        <h3>TIC TAC TOE</h3>
+                        <p>A fun, interactive Tic Tac Toe game built using HTML, CSS, and JavaScript </p>
+                        <a href="https://siva7560.github.io/tic-tac-toe/tic%20tac%20toe/" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                <div class="portfolio-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpI_AwlQLSQdjWempnmTss2UlTesGVSaOTvg&usqp=CAU" alt="Portfolio Item 3" style="height: 233px;">
+                    <div class="portfolio-caption">
+                        <h3>ROCK PAPER SCISSOR</h3>
+                        <p>A dynamic Rock Paper Scissors game created with HTML, CSS, and JavaScript.</p>
+                        <a href="https://siva7560.github.io/rock-paer-scissor/" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Education Section -->
+<section id="education" class="education-section">
+    <div class="container">
+        <h2 data-aos="fade-up" data-aos-duration="1200">Education</h2>
+        <div class="education-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+            <div class="education-item mb-4">
+                <h4>Bachelor of Technology in Computer Science</h4>
+                <p><strong>SRM University</strong>, 2022</p>
+                <p>Relevant Coursework: Web Development, Data Structures, Algorithms, Databases, etc.</p>
+            </div>
+            <div class="education-item mb-4">
+                <h4>Intermediate</h4>
+                <p><strong>Narayana Junior College</strong>, 2020-2022</p>
+                <p>Relevant Subjects: Mathematics, Physics, Chemistry</p>
+            </div>
+            <div class="education-item mb-4">
+                <h4>High School </h4>
+                <p><strong>Holy Faith High School</strong>, 2020 passed out</p>
+                <p>Relevant Subjects: Mathematics, Physics, English, History</p>
+            </div>
+        </div>
+    </div>
+</section>
+ <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container col-lg-9 col-xl-9">
+        <h2 data-aos="fade-up" data-aos-duration="1200" style="margin-bottom: 40px;">Contact Us</h2>
+        <div class="row d-flex flex-column justify-content-between align-items-center " >
+              
+                        <div class="col-md-9 col-lg-9 col-xl-9 " data-aos="fade-right" data-aos-duration="1200">
+                            <p>Feel free to reach out to me through any of the channels listed. I'm always open to connecting with new people, discussing potential projects, or just having a friendly conversation about web development!</p>
+                        </div>
+                     
+                        <div class="col-5 d-flex  align-items-center justify-content-center ">
+                            <div class="contact-icons d-flex align-items-center justify-content-around mt-100" data-aos="fade-left" data-aos-duration="1200">
+                                <a href="mailto:sivamandalapu567@gmail.com" class="contact-link"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+916305783481" class="contact-link"><i class="fas fa-phone-alt"></i></a>
+                                <a href="https://wa.me/6305783481" class="contact-link"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.linkedin.com/in/siva-mandalapu-28bb2a24b/" class="contact-link"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/siva7560" class="contact-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+         
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section text-center" style="padding: 20px 0; background-color: grey; color: #F7FFF7;">
+    <div class="container">
+        <p>© 2024 Siva Mandalapu - All Rights Reserved</p>
+        <a href="#privacy-policy" style="color: white ; text-decoration: none;">Privacy Policy</a>
+    </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+      
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+
+</body>
+
+</html>
+
