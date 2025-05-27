@@ -3,8 +3,7 @@
 
 ## Demo Video
 
-![Demo Video](assets/Demo.mp4)
-
+<img src="assets/Demo.mp4" alt="Demo" width="600"/>
 
 
 ## 🛠️ Setup Instructions
