@@ -3,7 +3,7 @@
 
 ## Demo Video
 
-![Bookmarked Employees](assets/Demo.mp4)
+![Demo Video](assets/Demo.mp4)
 
 
 
