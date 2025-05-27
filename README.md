@@ -1,6 +1,12 @@
 
 # HR Dashboard
 
+## Demo Video
+
+![Bookmarked Employees](assets/Demo.mp4)
+
+
+
 ## 🛠️ Setup Instructions
 
 Follow the steps below to set up and run the project locally:
