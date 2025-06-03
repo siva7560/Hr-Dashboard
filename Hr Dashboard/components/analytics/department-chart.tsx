@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { BarChart, Bar, Cell } from 'recharts';
 import { 
   BarChart, 
   Bar, 
@@ -128,17 +129,23 @@ export default function DepartmentChart() {
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend />
-            <Bar 
-              dataKey="avgRating" 
-              name="Average Rating" 
-              radius={[4, 4, 0, 0]}
-              onMouseEnter={(data) => setHoveredBar(data.name)}
-              onMouseLeave={() => setHoveredBar(null)}
-              className={({ name, avgRating }: any) => cn(
-                getBarColor(avgRating),
-                hoveredBar === name && "opacity-80"
-              )}
-            />
+            import { BarChart, Bar, Cell } from 'recharts';
+
+<Bar
+  dataKey="avgRating"
+  onMouseEnter={(data) => setHoveredBar(data.name)}
+  onMouseLeave={() => setHoveredBar(null)}
+>
+  {data.map((entry, index) => (
+    <Cell
+      key={`cell-${index}`}
+      fill={getBarColor(entry.avgRating)}
+      className={cn(
+        hoveredBar === entry.name && "opacity-80"
+      )}
+    />
+  ))}
+</Bar> 
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
